@@ -8,15 +8,13 @@ class FutureListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery
-          .of(context)
-          .size
-          .height * 0.4,
+      height: MediaQuery.of(context).size.height * 0.4,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return ListViewItem();
-        },),
+          return const ListViewItem();
+        },
+      ),
     );
   }
 }

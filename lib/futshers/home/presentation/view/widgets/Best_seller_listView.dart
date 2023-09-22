@@ -9,14 +9,15 @@ class Best_Seller_ListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       itemCount: 10,
       itemBuilder: (context, index) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0),
-        child: bestSellerListViewItem(),
-      );
-    },);
+        return const Padding(
+          padding: EdgeInsets.symmetric(vertical: 10.0),
+          child: bestSellerListViewItem(),
+        );
+      },
+    );
   }
 }

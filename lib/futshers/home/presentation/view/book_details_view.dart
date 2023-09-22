@@ -1,5 +1,4 @@
 import 'package:bookly_app/futshers/home/presentation/view/widgets/BookDetailsViewBody.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsView extends StatelessWidget {
@@ -7,7 +6,7 @@ class BookDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: BookDetailsViewBody(),
     );
   }

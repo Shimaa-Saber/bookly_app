@@ -11,9 +11,14 @@ class similerBooksSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('You can also like',style: Styles.TextStyle14.copyWith(fontWeight: FontWeight.w600),),
-        SizedBox(height: 16,),
-        similerListView(),
+        Text(
+          'You can also like',
+          style: Styles.TextStyle14.copyWith(fontWeight: FontWeight.w600),
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        const similerListView(),
       ],
     );
   }

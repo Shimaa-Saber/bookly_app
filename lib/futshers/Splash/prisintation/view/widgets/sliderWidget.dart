@@ -12,10 +12,11 @@ class sliderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animate,
-      builder: (context,_){
-        return  SlideTransition(
+      builder: (context, _) {
+        return SlideTransition(
           position: animate,
-          child: const Text('Read Free Books',
+          child: const Text(
+            'Read Free Books',
             textAlign: TextAlign.center,
           ),
         );

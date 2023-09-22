@@ -8,18 +8,13 @@ class ListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRect(
-
       child: AspectRatio(
-        aspectRatio: 2.6/4,
+        aspectRatio: 2.6 / 4,
         child: Container(
-
           decoration: BoxDecoration(
-
-              borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(
-                fit:BoxFit.fill,
-                image: AssetImage(AssetsData.test)),
-
+            borderRadius: BorderRadius.circular(16),
+            image: const DecorationImage(
+                fit: BoxFit.fill, image: AssetImage(AssetsData.test)),
           ),
         ),
       ),

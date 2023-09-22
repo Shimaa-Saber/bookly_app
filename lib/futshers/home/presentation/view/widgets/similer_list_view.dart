@@ -8,15 +8,13 @@ class similerListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery
-          .of(context)
-          .size
-          .height * 0.15,
+      height: MediaQuery.of(context).size.height * 0.15,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return ListViewItem();
-        },),
+          return const ListViewItem();
+        },
+      ),
     );
   }
 }

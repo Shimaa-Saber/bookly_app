@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomDetailsViewAppBar extends StatelessWidget {
@@ -10,10 +9,11 @@ class CustomDetailsViewAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.clear)),
-
-          IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart_outlined)),
-        ],),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.clear)),
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.shopping_cart_outlined)),
+        ],
+      ),
     );
   }
 }
