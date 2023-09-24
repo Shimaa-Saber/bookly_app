@@ -6,8 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FutureBooksCubit extends Cubit<FutureBooksStates>{
-  FutureBooksCubit(super.initialState, this.homeRepo);
-
+  FutureBooksCubit(this.homeRepo) : super(initialFutureBookState());
 final HomeRepo homeRepo;
   Future<void> getFutureBooks()async{
     emit(LoadindFutureBookState());

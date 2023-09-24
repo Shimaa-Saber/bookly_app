@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../data/repos/home_repo.dart';
 
 class NewestBooksCubit extends Cubit<NewestBooksStates>{
-  NewestBooksCubit(super.initialState, this.homeRepo);
+  NewestBooksCubit(this.homeRepo) : super(initialNewestBookState());
 
 
   final HomeRepo homeRepo;
