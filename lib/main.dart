@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context)=>FutureBooksCubit(
          getIt.get<home_repo_implements>(),
-        )
+        )..getFutureBooks()
 
         ),
 
