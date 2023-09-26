@@ -15,7 +15,7 @@ class ImageDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .17),
-          child: const ListViewItem(),
+          child: const ListViewItem(ImageUrl: 'https://th.bing.com/th/id/OIP.rvSWtRd_oPRTwDoTCmkP5gHaE8?pid=ImgDet&rs=1'),
         ),
         const SizedBox(
           height: 25,

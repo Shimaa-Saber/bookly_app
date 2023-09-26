@@ -9,3 +9,5 @@ void SetupLoctionServises(){
   getIt.registerSingleton<api_servises>(api_servises(Dio()));
   getIt.registerSingleton<home_repo_implements>(home_repo_implements(getIt.get<api_servises>()));
 }
+
+

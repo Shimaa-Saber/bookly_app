@@ -19,9 +19,10 @@ class homeViewBody extends StatelessWidget {
           children: [
             CustomAppbar(),
             FutureListView(),
-            // SizedBox(height: 20,),
+
+            SizedBox(height: 20,),
             Text(
-              'Best Seller',
+              'New Books',
               style: Styles.TextStyle18,
             ),
             SizedBox(

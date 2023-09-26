@@ -15,7 +15,7 @@ class FutureListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FutureBooksCubit,FutureBooksStates>(
       builder: (context, state) {
-        if (state is SuccessNewestBookState) {
+        if (state is SuccessFutureBookState) {
           return SizedBox(
             height: MediaQuery
                 .of(context)
@@ -24,7 +24,12 @@ class FutureListView extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const ListViewItem();
+                return  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 8),
+                  child: ListViewItem(
+                    ImageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail??'',
+                  ),
+                );
               },
             ),
           );

@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import '../../../../../core/utilties/assets.dart';
 
 class ListViewItem extends StatelessWidget {
-  const ListViewItem({Key? key}) : super(key: key);
-
+  const ListViewItem({Key? key, required this.ImageUrl}) : super(key: key);
+final String ImageUrl;
   @override
   Widget build(BuildContext context) {
     return ClipRect(
@@ -13,8 +13,8 @@ class ListViewItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image: const DecorationImage(
-                fit: BoxFit.fill, image: AssetImage(AssetsData.test)),
+            image:  DecorationImage(
+                fit: BoxFit.fill, image: NetworkImage(ImageUrl)),
           ),
         ),
       ),

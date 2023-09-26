@@ -12,7 +12,7 @@ class similerListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const ListViewItem();
+          return const ListViewItem(ImageUrl: 'https://th.bing.com/th/id/OIP.rvSWtRd_oPRTwDoTCmkP5gHaE8?pid=ImgDet&rs=1',);
         },
       ),
     );
