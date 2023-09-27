@@ -22,6 +22,8 @@ class FutureListView extends StatelessWidget {
                 .size
                 .height * 0.4,
             child: ListView.builder(
+              physics:BouncingScrollPhysics() ,
+              itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return  Padding(

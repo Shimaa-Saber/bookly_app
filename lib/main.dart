@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
 
         BlocProvider(create: (context)=>NewestBooksCubit(
           getIt.get<home_repo_implements>(),
-        )
+        )..getNewestBooks()
 
         )
       ],

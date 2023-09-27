@@ -13,7 +13,7 @@ class home_repo_implements implements HomeRepo{
   Future<Either<Failiar, List<BookModel>>> fetchNewsBooks() async {
     try {
       var data = await api_servise.get(
-          url: 'volumes?Filtering=free-ebooks&Sorting=newest& q=subject:programming ');
+          url: 'volumes?Filtering=free-ebooks&Sorting=newest& q=subject:imagination');
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
@@ -33,7 +33,7 @@ class home_repo_implements implements HomeRepo{
   Future<Either<Failiar, List<BookModel>>> fetchFutureBooks()async {
     try {
       var data = await api_servise.get(
-          url: 'volumes?Filtering=free-ebooks&q=subject:programming');
+          url: 'volumes?Filtering=free-ebooks&q=subject:imagination');
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));

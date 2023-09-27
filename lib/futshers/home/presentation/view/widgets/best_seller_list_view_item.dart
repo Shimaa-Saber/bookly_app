@@ -1,14 +1,17 @@
 import 'package:bookly_app/core/utilties/app_routers.dart';
+import 'package:bookly_app/futshers/home/data/models/book_model/book_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
 
 import '../../../../../core/utilties/Styles.dart';
 import '../../../../../core/utilties/assets.dart';
 import 'Book_rating.dart';
 
 class bestSellerListViewItem extends StatelessWidget {
-  const bestSellerListViewItem({Key? key}) : super(key: key);
-
+  const bestSellerListViewItem({Key? key, required this.bookModel,}) : super(key: key);
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,17 +21,16 @@ class bestSellerListViewItem extends StatelessWidget {
       child: SizedBox(
         height: 125,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding:  EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
             children: [
               AspectRatio(
                 aspectRatio: 2.5 / 4,
-                child: Container(
-                  decoration: BoxDecoration(
-                      image: const DecorationImage(
-                          fit: BoxFit.fill, image: AssetImage(AssetsData.test)),
-                      borderRadius: BorderRadius.circular(8)),
-                ),
+              child: CachedNetworkImage(
+                 imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail??'',
+                fit: BoxFit.fill,
+                errorWidget: (context, url, error) => Icon(Icons.error),
+               )
               ),
               const SizedBox(
                 width: 30,
@@ -39,8 +41,8 @@ class bestSellerListViewItem extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .5,
-                      child: const Text(
-                        'Harry Potter and the Goblet of  Fire',
+                      child:  Text(
+                        bookModel.volumeInfo.title!,
                         style: Styles.TextStyle20,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -49,8 +51,8 @@ class bestSellerListViewItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    const Text(
-                      'J.K. Roating',
+                      Text(
+                      bookModel.volumeInfo.authors![0],
                       style: Styles.TextStyle14,
                     ),
                     const SizedBox(
@@ -59,12 +61,15 @@ class bestSellerListViewItem extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          r'99.9 $',
+                          'Free',
                           style: Styles.TextStyle20.copyWith(
                               fontWeight: FontWeight.bold),
                         ),
                         const Spacer(),
-                        const BookRating()
+                         BookRating(
+                          rating: bookModel.volumeInfo.averageRating?.round()?? 0 ,
+                           count: bookModel.volumeInfo.ratingsCount??0,
+                        )
                       ],
                     )
                   ],
