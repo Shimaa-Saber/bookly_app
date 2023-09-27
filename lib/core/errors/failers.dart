@@ -30,7 +30,7 @@ class ServerError extends Failiar{
         if(dioException.message!.contains('SocketException')){
         return  ServerError('No internet connection');
         }
-       return ServerError('Un expexted error please try later');
+       return ServerError('No internet connection');
       case DioExceptionType.unknown:
        return ServerError(' Opps there was an error, please try later😞 ');
 

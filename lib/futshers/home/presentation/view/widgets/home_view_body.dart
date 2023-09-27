@@ -23,7 +23,7 @@ class homeViewBody extends StatelessWidget {
 
             SizedBox(height: 20,),
             Text(
-              'New Books',
+              'Newest Books',
               style: Styles.TextStyle18,
             ),
             SizedBox(
