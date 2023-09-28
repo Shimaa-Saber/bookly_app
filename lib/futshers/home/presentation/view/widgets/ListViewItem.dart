@@ -10,7 +10,7 @@ final String ImageUrl;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(12),
       child: AspectRatio(
         
         aspectRatio: 2.6 / 4,

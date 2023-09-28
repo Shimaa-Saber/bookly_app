@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utilties/app_routers.dart';
 import 'package:bookly_app/core/widgits/custom_error_message.dart';
 import 'package:bookly_app/core/widgits/custom_loading_indecator.dart';
 import 'package:bookly_app/futshers/home/presentation/manger/cubits/FutuerBooks_cubit/FutureBooks_States.dart';
@@ -5,6 +6,7 @@ import 'package:bookly_app/futshers/home/presentation/manger/cubits/FutuerBooks_
 import 'package:bookly_app/futshers/home/presentation/manger/cubits/NewestBooksCubit/NewestBooksStates.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import 'ListViewItem.dart';
 
@@ -28,8 +30,13 @@ class FutureListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return  Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 8),
-                  child: ListViewItem(
-                    ImageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail??'',
+                  child: GestureDetector(
+                    onTap: (){
+                      GoRouter.of(context).push(goRouter.KroutedetailViewBath,extra: state.books[index]);
+                    },
+                    child: ListViewItem(
+                      ImageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail??'',
+                    ),
                   ),
                 );
               },
