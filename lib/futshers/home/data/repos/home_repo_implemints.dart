@@ -1,14 +1,20 @@
+
+
 import 'package:bookly_app/core/errors/failers.dart';
 import 'package:bookly_app/core/utilties/api_servises.dart';
 import 'package:bookly_app/futshers/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/futshers/home/data/repos/home_repo.dart';
+import 'package:bookly_app/futshers/search/presentation/manger/cubit/SearchCubit.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class home_repo_implements implements HomeRepo{
   final api_servises api_servise;
 
   home_repo_implements(this.api_servise);
+
   @override
   Future<Either<Failiar, List<BookModel>>> fetchNewsBooks() async {
     try {
@@ -38,7 +44,7 @@ class home_repo_implements implements HomeRepo{
   Future<Either<Failiar, List<BookModel>>> fetchFutureBooks()async {
     try {
       var data = await api_servise.get(
-          url: 'volumes?Filtering=free-ebooks&q=subject:programming');
+          url: 'volumes?Filtering=free-ebooks&q=subject:Programming');
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));

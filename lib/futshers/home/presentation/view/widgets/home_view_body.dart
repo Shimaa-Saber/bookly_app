@@ -22,9 +22,12 @@ class homeViewBody extends StatelessWidget {
             FutureListView(),
 
             SizedBox(height: 20,),
-            Text(
-              'Newest Books',
-              style: Styles.TextStyle18,
+            Padding(
+              padding: EdgeInsets.only(left: 25.0),
+              child: Text(
+                'Newest Books',
+                style: Styles.TextStyle18,
+              ),
             ),
             SizedBox(
               height: 20,

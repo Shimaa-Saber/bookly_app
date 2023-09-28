@@ -3,6 +3,8 @@ import 'package:bookly_app/futshers/Splash/prisintation/view/SplashView.dart';
 import 'package:bookly_app/futshers/home/data/repos/home_repo_implemints.dart';
 import 'package:bookly_app/futshers/home/presentation/view/book_details_view.dart';
 import 'package:bookly_app/futshers/home/presentation/view/home_view.dart';
+import 'package:bookly_app/futshers/search/data/search_rebo/SearchRepoImp.dart';
+import 'package:bookly_app/futshers/search/presentation/manger/cubit/SearchCubit.dart';
 import 'package:bookly_app/futshers/search/presentation/views/search_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -35,7 +37,11 @@ abstract class goRouter {
     ),
     GoRoute(
       path: KsearchViewpath,
-      builder: (context, state) => const SearchView(),
+      builder: (context, state) => BlocProvider(
+        create: (context) => SearchCubit(
+          getIt.get<searchRepoimp>()
+        ),
+          child: const SearchView()),
     )
   ]);
 }
